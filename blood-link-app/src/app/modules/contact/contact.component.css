@@ -1,0 +1,85 @@
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info-left,
+  .contact-info-right {
+    width: 50%;
+  }
+  
+  .contact-form {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    flex: 1;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .input-container input,
+  .input-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .input-container input:focus,
+  .input-container textarea:focus {
+    outline: none;
+  }
+  
+  .input-container textarea {
+    resize: vertical;
+  }
+  
+  .submit-button {
+    background-color: #007bff; /* Blue color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3; /* Darker blue color */
+  }
+  h1 {
+    color: #e74c3c;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+  }

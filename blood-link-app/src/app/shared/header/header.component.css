@@ -1,0 +1,36 @@
+.custom-navbar {
+    background-color: #d10000; 
+    border-bottom: 2px solid #900; 
+  }
+  
+  .custom-navbar .navbar-brand,
+  .custom-navbar .nav-link {
+    color: #ffffff; 
+  }
+  
+  .custom-navbar .navbar-toggler {
+    border-color: #fff; 
+  }
+  
+  .custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  /* Hover effect for nav links */
+  .custom-navbar .nav-link:hover,
+  .custom-navbar .nav-link:focus {
+    color: #ffd700; 
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .custom-navbar .navbar-brand img {
+    height: 60px; 
+    margin-right: 30px; 
+  }
+  .navbar{
+    padding: 0 2% 0 2%;
+  }
+
+  #navbarBloodDonation{
+  flex-direction: row-reverse;
+  }

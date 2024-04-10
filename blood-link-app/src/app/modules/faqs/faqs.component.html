@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Also Ask</title>
+</head>
+<body >
+    
+     <div class="container mt-4">
+            <h1>Frequently Asked Questions</h1>
+            <details>
+            <summary>How do I donate blood?</summary>
+            <div>
+        <p>To donate blood, you can visit your nearest blood donation center or schedule an appointment through a blood donation app.</p>
+            </div>
+        </details>
+        <details>
+            <summary>Who can donate blood?</summary>
+            <div>
+        <p>Individuals who meet certain eligibility criteria, such as age, weight, and health status, can donate blood. Refer to the eligibility guidelines provided by the blood donation center.</p>
+            </div>
+        </details>
+        <details>
+            <summary>How do I sign up as a donor?</summary>
+            <div>
+        <p>To sign up as a donor, simply download the app and create an account. You will need to provide some basic information such as your name, contact information, blood type, and any relevant medical history.</p>        </div>
+        </details>
+        <details>
+            <summary>How do I request blood donations?</summary>
+            <div>
+        <p>If you are in need of blood donations, you can create a request on the app specifying the type of blood needed, quantity required, and any other relevant details. This request will then be visible to potential donors in your area.</p>
+            </div>
+        </details>
+    </div>
+    <div class="container">
+        <details>
+            <summary>Is there a screening process for donors?</summary>
+            <div>
+        <p>Yes, donors are typically required to undergo a screening process to ensure the safety and suitability of their blood donations. This may include questions about medical history and lifestyle factors, as well as basic health checks such as blood pressure and hemoglobin levels.</p>
+            </div>
+        </details>
+        <details>
+            <summary>How do I find blood donation drives in my area?</summary>
+            <div>
+        <p>The app will provide information about upcoming blood donation drives in your area, including dates, times, and locations. You can also set up notifications to alert you about nearby donation opportunities.</p>
+            </div>
+        </details>
+        <details>
+            <summary>Can I schedule appointments to donate blood?</summary>
+            <div>
+        <p>Yes, you can schedule appointments to donate blood through the app. This helps to manage the flow of donations and minimize wait times for donors.</p>
+            </div>
+        </details>
+        <details>
+            <summary>Is there a way to track my donation history?</summary>
+            <div>
+        <p>Yes, the app will keep a record of your donation history, including dates of donation, blood type donated, and any relevant feedback or notes from donation centers.</p>
+            </div>
+        </details>
+        <details>
+            <summary>Are there any incentives for donors?</summary>
+            <div>
+        <p>Some donation centers may offer incentives such as discounts on merchandise or recognition for frequent donors. However, the primary incentive for donating blood should always be the opportunity to save lives and help those in need.</p>
+            </div>
+        </details>
+        <details>
+            <summary>How is my personal information protected?</summary>
+            <div>
+        <p>The app takes privacy and security seriously and employs measures such as encryption and secure data storage to protect your personal information. Additionally, you have control over what information is shared and with whom.</p>
+            </div>
+        </details>
+        
+    </div>
+
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        // Show the first 3 questions
+        $(".moreBox").slice(0, 3).show();
+    
+        // If there are hidden questions, show the "Load More" button
+        if ($(".blogBox:hidden").length !== 0) {
+            $("#loadMore").show();
+        }
+    
+        // Click event for the "Load More" button
+        $("#loadMore").on("click", function(e) {
+            e.preventDefault();
+            // Show the next 6 hidden questions
+            $(".moreBox:hidden").slice(0, 6).slideDown();
+            // If no more hidden questions, hide the button
+            if ($(".moreBox:hidden").length === 0) {
+                $("#loadMore").fadeOut("slow");
+            }
+        });
+    });
+    
+</script>
+</html>

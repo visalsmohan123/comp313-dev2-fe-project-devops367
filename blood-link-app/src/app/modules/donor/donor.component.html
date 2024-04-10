@@ -1,0 +1,140 @@
+
+<div  class="row">
+  <button class="btn btn-primary" (click)="toggleDonorForm()">Donate Now</button>
+</div>
+<div class="row">
+  <div class="col-md-2 d-none d-md-block">
+    <img src="../../../assets/donor1.png" class="w-100" style="min-height: 90vh;" alt="">
+  </div>
+  <div class="donor-info-page col-md-8" >
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <button class="btn btn-warning mr-2 w-100" (click)="toggleDonorForm()">View Donation History</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-success w-100" (click)="toggleDonorDetailsForm()">View My Details</button>
+      </div>
+    </div>
+
+    <div class="m-5" *ngIf="!showDonorForm && !showDonorDetails">
+      <h1><strong>Blood Donation Process</strong></h1>
+      <br>
+      <br>
+      <p>When donating blood, the standard donation is approximately 450 mL, slightly less than half a litre or two cups. This represents a small portion of the blood in a person’s body, as the average adult has about 5 litres. The entire process takes just over an hour.  
+
+        We are constantly making efforts to improve our donor experience. Keep visiting our website for the most the up-to-date information.</p>
+    </div>
+    <div class="" *ngIf="showDonorForm">
+      <h2>Donor Information</h2>
+      <form (ngSubmit)="onSubmitDonate()">
+        <!-- Consent and Acknowledgement -->
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="consent" name="consent" [(ngModel)]="formData.consent">
+          <label class="form-check-label" for="consent">I consent to donate blood</label>
+        </div>
+      
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="acknowledgement" name="acknowledgement" [(ngModel)]="formData.acknowledgement">
+          <label class="form-check-label" for="acknowledgement">I acknowledge understanding the donation process and eligibility criteria</label>
+        </div>
+      
+        <!-- Emergency Contact -->
+        <div class="form-group">
+          <label for="emergencyContactName">Emergency Contact Name</label>
+          <input type="text" class="form-control" id="emergencyContactName" name="emergencyContactName" [(ngModel)]="formData.emergencyContactName" placeholder="Enter name">
+        </div>
+      
+        <div class="form-group">
+          <label for="emergencyContactRelationship">Relationship</label>
+          <input type="text" class="form-control" id="emergencyContactRelationship" name="emergencyContactRelationship" [(ngModel)]="formData.emergencyContactRelationship" placeholder="Enter relationship">
+        </div>
+      
+        <div class="form-group">
+          <label for="emergencyContactPhone">Phone Number</label>
+          <input type="tel" class="form-control" id="emergencyContactPhone" name="emergencyContactPhone" [(ngModel)]="formData.emergencyContactPhone" placeholder="Enter phone number">
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+    </div>
+
+
+    <div class="" *ngIf="showDonorDetails">
+      <h2>Donor Details</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" formControlName="name" class="form-control" id="name">
+        </div>
+      
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <input type="text" formControlName="gender" class="form-control" id="gender">
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" formControlName="dob" class="form-control" id="dob">
+        </div>
+      
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" formControlName="phone" class="form-control" id="phone">
+        </div>
+      
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" formControlName="city" class="form-control" id="city">
+        </div>
+      
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input type="text" formControlName="state" class="form-control" id="state">
+        </div>
+      
+        <div class="form-group">
+          <label for="zip">ZIP Code:</label>
+          <input type="text" formControlName="zip" class="form-control" id="zip">
+        </div>
+      
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" formControlName="country" class="form-control" id="country">
+        </div>
+        <div class="form-group">
+          <label for="bloodType">Blood Group:</label>
+          <input type="text" formControlName="bloodType" class="form-control" id="bloodType">
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight:</label>
+          <input type="number" formControlName="weight" class="form-control" id="weight">
+        </div>
+      
+        <div class="form-group">
+          <label for="height">Height:</label>
+          <input type="number" formControlName="height" class="form-control" id="height">
+        </div>
+      
+        <div class="form-group">
+          <label for="medicalConditions">Medical Conditions:</label>
+          <textarea formControlName="medicalConditions" class="form-control" id="medicalConditions"></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="lastDonation">Last Donation:</label>
+          <input type="date" formControlName="lastDonation" class="form-control" id="lastDonation">
+        </div>
+      
+        <!-- Add more form fields as needed -->
+      
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      
+    </div>
+
+  </div>
+  <div class="col-md-2 d-none d-md-block">
+    <img src="../../../assets/donor2.png" class="w-100" style="min-height: 90vh;" alt="">
+  </div>
+</div>

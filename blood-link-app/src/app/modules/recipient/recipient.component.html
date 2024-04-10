@@ -1,0 +1,316 @@
+<div class="row">
+  <button class="btn btn-primary" (click)="toggleDonorForm()">
+    Requst Blood
+  </button>
+</div>
+<div class="row">
+  <div class="col-md-2 d-none d-md-block">
+    <img
+      src="../../../assets/donor1.png"
+      class="w-100"
+      style="min-height: 90vh"
+      alt=""
+    />
+  </div>
+  <div class="donor-info-page col-md-8">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <button class="btn btn-warning mr-2 w-100" (click)="toggleDonorForm()">
+          View History
+        </button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-success w-100" (click)="toggleDonorForm()">
+          View My Details
+        </button>
+      </div>
+    </div>
+
+    <div class="m-5" *ngIf="!showRecepientForm">
+      <h1><strong>Blood Receiving Process</strong></h1>
+      <br />
+      <br />
+      <p>
+        The blood receiving process begins with assessing the recipient's
+        medical condition and matching their blood type with a suitable donor.
+        Once prepared, the blood is transfused intravenously at a controlled
+        rate while closely monitoring the recipient for any adverse reactions.
+        After the transfusion, the recipient's vital signs are observed to
+        ensure a successful outcome. This process ensures safe and effective
+        blood transfer to meet the recipient's needs.
+      </p>
+    </div>
+    <div class="" *ngIf="showRecepientForm">
+      <h2>Recipient Information</h2>
+      <form>
+        <!-- Personal Information -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="Enter full name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" class="form-control" id="dob" />
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            placeholder="Enter phone number"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email"
+          />
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label for="streetAddress">Street Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="streetAddress"
+            placeholder="Enter street address"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            placeholder="Enter city"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="state">State/Province</label>
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            placeholder="Enter state or province"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="zip">Postal/Zip Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="zip"
+            placeholder="Enter postal or zip code"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            placeholder="Enter country"
+          />
+        </div>
+
+        <!-- Health Information -->
+        <div class="form-group">
+          <label for="bloodType">Blood Type (if known)</label>
+          <input
+            type="text"
+            class="form-control"
+            id="bloodType"
+            placeholder="Enter blood type"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="weight">Weight (optional)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="weight"
+            placeholder="Enter weight in kg"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="height">Height (optional)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="height"
+            placeholder="Enter height in cm"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="medicalConditions"
+            >Any medical conditions or medications that may affect eligibility
+            to receive blood</label
+          >
+          <textarea
+            class="form-control"
+            id="medicalConditions"
+            rows="3"
+            placeholder="Enter details"
+          ></textarea>
+        </div>
+
+        <!-- Blood Donation Requirements -->
+        <div class="form-group">
+          <label for="requiredBloodType">Required Blood Type</label>
+          <input
+            type="text"
+            class="form-control"
+            id="requiredBloodType"
+            placeholder="Enter required blood type"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="quantityNeeded">Quantity of Blood Needed</label>
+          <input
+            type="number"
+            class="form-control"
+            id="quantityNeeded"
+            placeholder="Enter quantity in units"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="neededByDate">Date by which the blood is needed</label>
+          <input type="date" class="form-control" id="neededByDate" />
+        </div>
+
+        <!-- Doctor/Hospital Information -->
+        <div class="form-group">
+          <label for="doctorName">Doctor's Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="doctorName"
+            placeholder="Enter doctor's name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="hospitalName">Hospital/Clinic Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hospitalName"
+            placeholder="Enter hospital or clinic name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="hospitalAddress">Hospital/Clinic Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hospitalAddress"
+            placeholder="Enter hospital or clinic address"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="doctorContact">Doctor's Contact Information</label>
+          <input
+            type="text"
+            class="form-control"
+            id="doctorContact"
+            placeholder="Enter doctor's contact information"
+          />
+        </div>
+
+        <!-- Consent and Acknowledgement -->
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="consent" />
+          <label class="form-check-label" for="consent"
+            >I consent to receive blood</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="acknowledgement"
+          />
+          <label class="form-check-label" for="acknowledgement"
+            >I acknowledge understanding the risks and benefits associated with
+            blood transfusion</label
+          >
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="form-group">
+          <label for="emergencyContactName">Emergency Contact Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emergencyContactName"
+            placeholder="Enter name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="emergencyContactRelationship">Relationship</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emergencyContactRelationship"
+            placeholder="Enter relationship"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="emergencyContactPhone">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="emergencyContactPhone"
+            placeholder="Enter phone number"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-2 d-none d-md-block">
+    <img
+      src="../../../assets/donor2.png"
+      class="w-100"
+      style="min-height: 90vh"
+      alt=""
+    />
+  </div>
+</div>
