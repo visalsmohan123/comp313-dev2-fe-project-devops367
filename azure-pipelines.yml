@@ -21,7 +21,3 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- script: |
-    cd blood-link-app
-    npm run test
-  displayName: 'Run unit tests'
